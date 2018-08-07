@@ -1,0 +1,38 @@
+<div class="container">
+  <h2>Signup</h2>
+  <form [formGroup]="form" (ngSubmit)="submitForm()">
+    <div class="form-group">
+      <label for="email">Name:</label>
+      <input formControlName="name" type="text" class="form-control" id="name" placeholder="Enter Name">
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input formControlName="email" type="email" class="form-control" id="email" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input formControlName="password" type="password" class="form-control" id="pwd" placeholder="Enter password">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Confirm Password:</label>
+      <input formControlName="cpassword" type="password" class="form-control" id="cpwd" placeholder="Enter Confirm password">
+    </div>
+
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</div>
+
+<ul>
+  <li *ngFor="let data of dataList">
+    {{data.name}} -- {{data.email}}
+  </li>
+</ul>
+<p boldHover>hover me</p>
+<div [ngSwitch]="movie">
+  <p *ngSwitchCase="'action'" >Action Movie</p>
+  <p *ngSwitchCase="'horror'" >Horror Movie</p>
+  <p *ngSwitchCase="'thriller'" >Thriller Movie</p>
+  <p *ngSwitchDefault >Default</p>
+</div>
+
+<h2 [hidden]="!isActive">Active User</h2>
